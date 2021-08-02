@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ArtistListMediaViewController" customModule="GMTestCoding" customModuleProvider="target">
+            <connections>
+                <outlet property="btnSearchArtist" destination="3zC-IY-eft" id="UBy-ZR-B36"/>
+                <outlet property="collectionView" destination="Krb-j1-OrH" id="gCO-t3-Gga"/>
+                <outlet property="loading" destination="8Te-hB-Gdd" id="MPH-Zj-Xsz"/>
+                <outlet property="stackContainer" destination="8DW-y5-Jwv" id="l4D-vX-v7u"/>
+                <outlet property="txtSearchArtist" destination="tBo-2R-xHH" id="nN2-TZ-atJ"/>
+                <outlet property="view" destination="iN0-l3-epB" id="vof-Qk-Hbw"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="8DW-y5-Jwv">
+                    <rect key="frame" x="16" y="70" width="382" height="100"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type your favorite Artist" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tBo-2R-xHH">
+                            <rect key="frame" x="8" y="8" width="366" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3zC-IY-eft">
+                            <rect key="frame" x="8" y="58" width="366" height="34"/>
+                            <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                            <state key="normal" title="Search Artist"/>
+                            <connections>
+                                <action selector="searchArtist:" destination="-1" eventType="touchUpInside" id="VxO-Ui-LpK"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
+                </stackView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="8Te-hB-Gdd">
+                    <rect key="frame" x="188.5" y="505" width="37" height="37"/>
+                    <color key="color" systemColor="systemBlueColor"/>
+                </activityIndicatorView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Krb-j1-OrH">
+                    <rect key="frame" x="0.0" y="185" width="414" height="677"/>
+                    <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SGg-3m-IlG">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Krb-j1-OrH" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="6BK-3d-YNw"/>
+                <constraint firstItem="8Te-hB-Gdd" firstAttribute="centerY" secondItem="Krb-j1-OrH" secondAttribute="centerY" id="BZg-k0-OUf"/>
+                <constraint firstItem="8Te-hB-Gdd" firstAttribute="centerX" secondItem="Krb-j1-OrH" secondAttribute="centerX" id="CfV-dk-QHk"/>
+                <constraint firstItem="8DW-y5-Jwv" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="MJg-mJ-QER"/>
+                <constraint firstItem="8DW-y5-Jwv" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="26" id="OS1-xz-UBl"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Krb-j1-OrH" secondAttribute="bottom" id="cbD-HX-IX8"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Krb-j1-OrH" secondAttribute="trailing" id="lLb-uQ-Ny4"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="8DW-y5-Jwv" secondAttribute="trailing" constant="16" id="n4h-Hc-bxP"/>
+                <constraint firstItem="Krb-j1-OrH" firstAttribute="top" secondItem="8DW-y5-Jwv" secondAttribute="bottom" constant="15" id="s2H-tt-AZC"/>
+            </constraints>
+            <point key="canvasLocation" x="113.04347826086958" y="99.776785714285708"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
